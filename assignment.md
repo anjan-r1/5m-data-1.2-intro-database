@@ -64,6 +64,40 @@ There are 4 entities, think of what attributes each entity should have.
 Answer:
 
 ```dbml
+table customer {
+  customer_id int [pk]
+  name varchar
+  address text
+  email_id varchar
+  phone_number varchar
+  gender varchar
+  customer_since date
+}
+
+table cart {
+  cart_id int [pk]
+  customer_id int
+}
+
+table cart_item {
+  cart_id int [pk]
+  book_id int [pk]
+  quantity int 
+}
+
+table book {
+  book_id int [pk]
+  isbn varchar
+  title varchar
+  author varchar
+  publisher varchar
+  publishing_year year
+  price decimal
+}
+
+Ref: customer.customer_id - cart.customer_id // one customer can have one cart
+Ref: cart.cart_id < cart_item.cart_id // one cart can have multiple items
+Ref: cart_item.book_id - book.book_id // one cart item represents one book 
 
 
 ```
