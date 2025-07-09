@@ -31,7 +31,7 @@ table user {
 table post {
   id int [pk]
   title varchar
-  body varchar
+  body text
   user_id varchar 
   status varchar 
   created_at datetime
@@ -64,6 +64,7 @@ There are 4 entities, think of what attributes each entity should have.
 Answer:
 
 ```dbml
+
 
 ```
 
